@@ -31,6 +31,7 @@ body,html{
     border-radius: 15px;
     border: 2px solid #D16E26;
     background-color: #2F2929;
+    color: white;
 }
 
 .comparacao{
@@ -41,6 +42,7 @@ body,html{
     display: flex;
     align-items: center;
     font-size: 50px;
+    color: white;
 }
 
 .inputMaior{
@@ -53,6 +55,7 @@ body,html{
     border-radius: 15px;
     border: 2px solid #D16E26;
     background-color: #2F2929;
+    color: white;
 }
 
 .divEnviar{
