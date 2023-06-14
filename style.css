@@ -185,7 +185,7 @@ option{
 }
 #popup{
     margin-top: 5vh;
-    height: 90vh;
+    height: 100vh;
     background-color: rgb(58, 51, 46);
     width: 50vw;
     border-radius: 15px;
@@ -223,4 +223,11 @@ option{
     right: 10px;
     top:10px;
     font-size: large;
+}
+
+.pre{
+    margin:4vw 2.5vw;
+    height: 50vh;
+    width: 45vw;
+    text-align: justify;
 }
