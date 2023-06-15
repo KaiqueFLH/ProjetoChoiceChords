@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 
-
+@media screen {
+    
+}
 
 body,html{
     margin: 0;
@@ -9,6 +11,7 @@ body,html{
     background-color: #2F2929;
 }
 
+/* ícone de menu */
 .hamburguerList{
     margin-left: 2vw;
     color: #fff;
@@ -29,6 +32,7 @@ body,html{
     font-family: 'Pompiere', cursive;
 }
 
+/* Imagem da nota musical */
 .imagemH1{
     
     filter: invert();
@@ -50,11 +54,8 @@ body,html{
     margin-top: 100px;
 }
 
-.inputMenor{
-
-}
-
-.quadrado{
+/* Quadrado dos inputs de Nota */
+.inputNotas{
     width: 50px;
     height: 50px;
     border-radius: 15px;
@@ -63,7 +64,9 @@ body,html{
     background-color: rgba(255, 255, 255, 0.04);
 }
 
-.quadradoMod{
+
+/* Quadrado menor do input de Nota */
+.inputNotasMenores{
     height: 35px;
     width: 35px;
     border-radius: 8px;
@@ -81,11 +84,7 @@ body,html{
     color: white;
 }
 
-.inputMaior{
-    display: flex;
-}
-
-.labelMaior{
+.conjuntoInputAcorde{
     display: flex;
     align-items: center;
     gap: 5px;
@@ -102,7 +101,9 @@ body,html{
     background-color: rgba(255, 255, 255, 0.04);
 
 }
-.modificado{
+
+/* input Acorde menor */
+.inputAcordeModificado{
     width: 80px;
 }
 
@@ -130,12 +131,13 @@ select{
 
 }
 
-.divMaior{
+.centralizaTeclado{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Teclado */
 #fundoTeclado{
     padding: 0 50px;
     list-style: none;
@@ -171,29 +173,61 @@ option{
     z-index: 1;
 }
 
-#defoco{
-    position:absolute;
+/* Teclado */
+/* Conjunto do Popup */
+.defoco{
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
-    height: 170vh;
     display: none;
     justify-content: center;
+    align-items: center;
     backdrop-filter: blur(3px);
     z-index: 2;
+    position:fixed;
+
 }
-#popup{
-    margin-top: 5vh;
-    height: 100vh;
+.popup{
     background-color: rgb(58, 51, 46);
     width: 50vw;
+    height: 90vh;
+    display: block;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.658);
     color:white;
     animation: animacaoPopup 0.3s ease-in-out;
-    position:relative;
+    position:fixed;
 }
+
+.popupFechar{
+    background-color: rgb(58, 51, 46);
+    height: 90vh;
+    width: 50vw;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.658);
+    color:white;
+    animation: animacaoPopupSair 0.3s ease-in-out;
+    position:fixed;
+}
+
+.erros{
+    height: 45vh;
+    width: 45vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #D16E26;
+    font-size: xx-large;
+    font-family: 'Pompiere';
+    font-family: cursive;
+    text-align: center;
+}
+
+#instrucoes{
+    display: none;
+}
+
 
 @keyframes animacaoPopup {
     0% {
@@ -215,7 +249,7 @@ option{
     }
 }
 
-#sair{
+.sair{
     position:absolute;
     background-color: rgba(0,0,0,0);
     border:0;
@@ -226,8 +260,78 @@ option{
 }
 
 .pre{
-    margin:4vw 2.5vw;
+    margin:3vw 2.5vw;
     height: 50vh;
     width: 45vw;
     text-align: justify;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+span{
+    color: #D16E26;
+}
+
+/* Conjunto do Popup */
+/* Rodapé */
+.rodape{
+    width: 180.3vh;
+    height: 30vh;
+    margin-top: 40vh;
+    background-color: #44362D;
+    color: white;
+
+}
+.created{
+    position: absolute;
+    width: 180.3vh;
+    height: 10vh;
+    margin-top: 18.3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.createdBy{
+    margin-top: 2vh;
+    margin-bottom: 1.5vh;
+    font-size: 14px;
+    font-family: monospace;
+    color: white;
+}
+
+.musicTales{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 27.5vh;
+    width: 180.3vh;
+    margin-top: 20px;
+}
+.logo{
+    position: absolute;
+    width: 30vh;
+    height: 10vh;
+}
+.divLogo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: absolute;
+    height: 27.5vh;
+    width: 180.3vh;
+}
+
+.cabecalho{
+    display: flex;
+    align-items: center;
+    width: 180.3vh;
+    height: 10vh;
+    background-color: #44362D;
 }

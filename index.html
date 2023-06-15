@@ -4,29 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ChoiceChords</title>
+    <link rel="icon" href="./imagens/MusicTalesCopia.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+<header>
+    <div class="cabecalho">
+        <!--Adiciona um ícone ao canto da tela onde dará informações de sobre o site e como utlizar o website -->
+        <div class="hamburguerList">
+            <!--Abre o popup onde mostrará as informações sobre o site e de como utiliza-lo-->
+            <h1 style="cursor: pointer;" onclick="abrirPopup()">☰</h1>
+        </div>
+    </div>
+</header>
 
 <body>
-
-    <div class="hamburguerList">
-        <h1 style="cursor: pointer;" onclick="abrirPopup()">☰</h1>
-    </div>
-
+    <!--Título do site junto das imagens de notas musicais-->
     <div class="divTitulo">
         <img class="imagemH1Dois" src="./imagens/nota-musical.png" alt="">
         <h1 class="h1Nome">ChoiceChords</h1>
         <img class="imagemH1" src="./imagens/nota-musical.png" alt="">
     </div>
 
-    <!-- --------------------------------------------------------------------------------- -->
 
+    <!--Lista com as notas adicionados no site, juntamente de seus respectivos valores, 
+        apenas do primeiro bloco de seleção da nota um-->
     <div id="inputs">
         <label name="nota1">
-            <select class="quadrado" onchange="procuraNota()" id="nota1">
+            <select class="inputNotas" onchange="procuraNota()" id="nota1">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Re</option>
@@ -36,13 +43,14 @@
                 <option value="5.5">La</option>
                 <option value="6.5">Si</option>
             </select>
-            <select class="quadrado quadradoMod"  onchange="procuraNota()" id="modificadorNota1">
+            <!--Modificador da nota um-->
+            <select class="inputNotas inputNotasMenores" onchange="procuraNota()" id="modificadorNota1">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
-
-            <select class="quadrado" onchange="procuraNota()" onchange="procuraNota()" name="" id="nota2">
+            <!--Bloco de seleção da nota dois-->
+            <select class="inputNotas" onchange="procuraNota()" onchange="procuraNota()" name="" id="nota2">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Re</option>
@@ -52,13 +60,14 @@
                 <option value="5.5">La</option>
                 <option value="6.5">Si</option>
             </select>
-            <select class="quadrado quadradoMod" onchange="procuraNota()" id="modificadorNota2">
+            <!--Modificador da nota dois-->
+            <select class="inputNotas inputNotasMenores" onchange="procuraNota()" id="modificadorNota2">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
-
-            <select class="quadrado" onchange="procuraNota()" name="" id="nota3">
+            <!--Bloco de seleção da nota três-->
+            <select class="inputNotas" onchange="procuraNota()" name="" id="nota3">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Re</option>
@@ -68,18 +77,20 @@
                 <option value="5.5">La</option>
                 <option value="6.5">Si</option>
             </select>
-            <select class="quadrado quadradoMod" onchange="procuraNota()" id="modificadorNota3">
+            <!--Modificador da nota três-->
+            <select class="inputNotas inputNotasMenores" onchange="procuraNota()" id="modificadorNota3">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
         </label>
 
-
+        <!--adiciona a seta de comparação no meio do site-->
         <div class="comparacao">
             <span id="setas" class="material-symbols-outlined">compare_arrows</span>
         </div>
 
-        <label class="labelMaior">
+        <!--Lista de acordes, junto de seus respectivos valores-->
+        <label class="conjuntoInputAcorde">
             <select class="inputAcorde" onchange="procuraAcorde()" name="" id="acorde">
                 <option value="0"></option>
                 <option value="1">C</option>
@@ -90,25 +101,25 @@
                 <option value="5.5">A</option>
                 <option value="6.5">B</option>
             </select>
-            <select class="inputAcorde modificado"  onchange="procuraAcorde()" id="modificadorAcorde">
+            <!--Modificador de acorde-->
+            <select class="inputAcorde inputAcordeModificado" onchange="procuraAcorde()" id="modificadorAcorde">
                 <option value="0"></option>
                 <option value="#">#</option>
                 <option value="m">m</option>
                 <option value="#m">#m</option>
             </select>
         </label>
+    </div>
 
-    </div>
-    <div id="enviar">
-    </div>
+    <!--Adiciona o botão de enviar para mostrar no piano-->
     <div class="divEnviar">
         <button class="botaoEnviar" onclick="buscar()">Enviar</button>
     </div>
     <script src="./script.js"></script>
 
 
-    
-    <div class="divMaior">
+    <!--Lista para representar o piano atráves de CSS-->
+    <div class="centralizaTeclado">
         <ul id="fundoTeclado">
             <li id="1" class="nota"></li>
             <li id="1.5" class="sustenido"></li>
@@ -132,30 +143,108 @@
             <li id="10.5" class="nota"></li>
         </ul>
     </div>
-</body>
-<div id="defoco">
-    <div id="popup">
-        <button id="sair" onclick="fechar()">X</button>
 
-        <p class="pre">
-            O que são Notas?<br><br>
+    <!-- Rodapé do Site -->
+    <footer>
+        <div class="rodape">
+            <div class="divLogo">
+                <img class="logo" src="./imagens/MusicTales.PNG">
+            </div>
+            <div class="musicTales">
 
-São frequências específicas de vibração que nossos ouvidos captam e nosso cérebro interpreta como som. Normalmente, diferencia-se nota de barulho, sendo a nota uma vibração regular, enquanto o barulho seria uma vibração irregular.
-<br><br>
-O que são Acordes?<br><br>
+                © 2023 - 2023 MusicTales.com,inc.
+            </div>
+            <div class="created">
+                <span class="createdBy">Created by</span>
+                Kaique Fernandes Lima Homem<br>
+                Jonatas Jackson Gonçalves<br> 
+                Davi Simplício<br>
+            </div>
+        </div>
+    </footer>
 
-Um acorde é um conjunto de notas que, quando ouvidas simultaneamente, compõem uma harmonia sonora, mesmo sem serem tocadas ao mesmo tempo.
-<br><br>
-Como formar um Acorde?<br><br>
+    
+    <div id="blur" class="defoco">
+        <!-- Esse Pop-up Mostra ao usuário uma instrução de uso -->
+        <div id="instrucoes" class="popupFechar">
+            <button class="sair" onclick="fechar('instrucoes')">X</button>
 
-Existem acordes maiores, menores, sustenidos e sustenidos menores. Os acordes maiores são formados pela primeira nota (a que dá nome ao acorde), uma nota que está 2 tons acima da primeira (chamada de terça) e uma nota que está 1,5 tom acima da terça (chamada de quinta). Nos acordes menores, as terças são 1,5 tom acima da primeira e a quinta é 2 tons acima da terça. Já nos sustenidos e sustenidos menores, adiciona-se 0,5 tom em cima de cada uma das três notas (primeira, terça e quinta).
-<br><br>
-Como usar o site?<br><br>
+            <p class="pre">
+                <span>O que são Notas?</span><br><br>
 
-O site tem uma funcionalidade muito simples de ser entendida. Nos seis campos à direita, você seleciona as notas junto com seus modificadores (sustenido ou não), para que ao selecionar três notas, possamos procurar qual acorde elas formam. Nos dois campos à esquerda, você seleciona o acorde e o seu modificador (sustenido, menor, sustenido menor ou nenhum). Ao apertar o botão de enviar, os campos do outro lado serão alterados para que as notas ou o acorde estejam de acordo com o valor inserido. Além disso, ao rolar para baixo, você pode visualizar uma representação gráfica das notas em um teclado, o que facilita para os usuários iniciantes.
-<br><br>
-Nota: Alguns acordes não podem ser calculados por esse site, apenas acordes normais, menores, sustenidos e sustenidos menores.
-        </p>
+                São frequências específicas de vibração que nossos ouvidos captam e nosso cérebro interpreta como som.
+                Normalmente, diferencia-se nota de barulho, sendo a nota uma vibração regular, enquanto o barulho seria
+                uma
+                vibração irregular.
+                <br><br>
+                <span>O que são Acordes?</span><br><br>
+
+                Um acorde é um conjunto de notas que, quando ouvidas simultaneamente, compõem uma harmonia sonora, mesmo
+                sem
+                serem tocadas ao mesmo tempo.
+                <br><br>
+                <span>Como formar um Acorde?</span><br><br>
+
+                Existem acordes maiores, menores, sustenidos e sustenidos menores. Os acordes maiores são formados pela
+                primeira nota (a que dá nome ao acorde), uma nota que está 2 tons acima da primeira (chamada de terça) e
+                uma
+                nota que está 1,5 tom acima da terça (chamada de quinta). Nos acordes menores, as terças são 1,5 tom
+                acima
+                da primeira e a quinta é 2 tons acima da terça. Já nos sustenidos e sustenidos menores, adiciona-se 0,5
+                tom
+                em cima de cada uma das três notas (primeira, terça e quinta).
+                <br><br>
+                <span>Como usar o site?</span><br><br>
+
+                O site tem uma funcionalidade muito simples de ser entendida. Nos seis campos à direita, você seleciona
+                as
+                notas junto com seus modificadores (sustenido ou não), para que ao selecionar três notas, possamos
+                procurar
+                qual acorde elas formam. Nos dois campos à esquerda, você seleciona o acorde e o seu modificador
+                (sustenido,
+                menor, sustenido menor ou nenhum). Ao apertar o botão de enviar, os campos do outro lado serão alterados
+                para que as notas ou o acorde estejam de acordo com o valor inserido. Além disso, ao rolar para baixo,
+                você
+                pode visualizar uma representação gráfica das notas em um teclado, o que facilita para os usuários
+                iniciantes.
+                <br><br>
+                <span>Nota:</span> Alguns acordes não podem ser calculados por esse site, apenas acordes normais,
+                menores,
+                sustenidos e
+                sustenidos menores.
+            </p>
+        </div>
+
+        <!-- Esse Pop-up Mostra ao usuário os Erros cometidos pelo mesmo. -->
+        <div id="erroAcordeVazio" class="popupFechar erros">
+
+            <button class="sair" onclick="fechar('erroAcordeVazio')">X</button>
+            <p>Você precisa inserir um acorde válido!</p>
+        </div>
+
+        <div id="erroNotaVazio" class="popupFechar erros">
+
+            <button class="sair" onclick="fechar('erroNotaVazio')">X</button>
+            <p>Você precisa inserir três notas válidas!</p>
+        </div>
+
+        <div id="erroTudoVazio" class="popupFechar erros">
+
+            <button class="sair" onclick="fechar('erroTudoVazio')">X</button>
+            <p>Você precisa inserir algo!</p>
+        </div>
+
+        <div id="erroAcordeInvalido" class="popupFechar erros">
+
+            <button class="sair" onclick="fechar('erroAcordeInvalido')">X</button>
+
+            <p>Esse acorde não é um acorde<br> válido conhecido!</p>
+        </div>
     </div>
-</div>
+</body>
+
+
+
+
+
 </html>
