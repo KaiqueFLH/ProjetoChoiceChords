@@ -28,12 +28,12 @@ function buscar() {
         if (acorde.value != "0") {
             defineNota();
         }
-        else if(modificadorAcorde.value=="0" &&
-        acorde.value == "0"){
+        else if (modificadorAcorde.value == "0" &&
+            acorde.value == "0") {
             document.getElementById("blur").style.display = "flex";
             document.getElementById("erroAcordeVazio").classList.remove("popupFechar")
             document.getElementById("erroAcordeVazio").classList.add("popup")
-            document.getElementById("erroAcordeVazio").style.display="flex";
+            document.getElementById("erroAcordeVazio").style.display = "flex";
         }
         else if (nota1.value != "0" &&
             nota2.value != "0" &&
@@ -48,26 +48,26 @@ function buscar() {
             nota3.value != "0") {
             defineAcorde();
         }
-        else if(nota1.value == "0" &&
-        nota2.value == "0" &&
-        nota3.value == "0" &&
-        modificadorNota1.value == "0" &&
-        modificadorNota2.value == "0" &&
-        modificadorNota3.value == "0"){
+        else if (nota1.value == "0" &&
+            nota2.value == "0" &&
+            nota3.value == "0" &&
+            modificadorNota1.value == "0" &&
+            modificadorNota2.value == "0" &&
+            modificadorNota3.value == "0") {
             defineNota();
         }
         else {
             document.getElementById("blur").style.display = "flex";
             document.getElementById("erroNotaVazio").classList.remove("popupFechar")
             document.getElementById("erroNotaVazio").classList.add("popup")
-            document.getElementById("erroNotaVazio").style.display="flex";
+            document.getElementById("erroNotaVazio").style.display = "flex";
         }
     }
     if (this.procura == undefined) {
         document.getElementById("blur").style.display = "flex";
         document.getElementById("erroTudoVazio").classList.remove("popupFechar")
         document.getElementById("erroTudoVazio").classList.add("popup")
-        document.getElementById("erroTudoVazio").style.display="flex";
+        document.getElementById("erroTudoVazio").style.display = "flex";
     }
 }
 
@@ -77,7 +77,7 @@ function procuraAcorde() {
     if (acorde.value == "3" || acorde.value == "6.5") {
         modificadorAcorde.children[1].disabled = true;
         modificadorAcorde.children[3].disabled = true;
-        if(modificadorAcorde.value != "0" && modificadorAcorde.value != "m"){
+        if (modificadorAcorde.value != "0" && modificadorAcorde.value != "m") {
             modificadorAcorde.value = "0";
         }
     } else {
@@ -91,7 +91,7 @@ function procuraNota() {
     this.procura = "Nota";
     if (nota1.value == "3" || nota1.value == "6.5") {
         modificadorNota1.children[1].disabled = true;
-        if(modificadorNota1.value=="0.5"){
+        if (modificadorNota1.value == "0.5") {
             modificadorNota1.value = "0";
         }
     } else {
@@ -99,7 +99,7 @@ function procuraNota() {
     }
     if (nota2.value == "3" || nota2.value == "6.5") {
         modificadorNota2.children[1].disabled = true;
-        if(modificadorNota2.value=="0.5"){
+        if (modificadorNota2.value == "0.5") {
             modificadorNota2.value = "0";
         }
 
@@ -108,7 +108,7 @@ function procuraNota() {
     }
     if (nota3.value == "3" || nota3.value == "6.5") {
         modificadorNota3.children[1].disabled = true;
-        if(modificadorNota3.value == "0.5"){
+        if (modificadorNota3.value == "0.5") {
             modificadorNota3.value = "0";
         }
 
@@ -145,7 +145,7 @@ function defineAcorde() {
         document.getElementById("erroAcordeInvalido").classList.remove("popupFechar")
         document.getElementById("erroAcordeInvalido").classList.add("popup")
 
-        document.getElementById("erroAcordeInvalido").style.display="flex";
+        document.getElementById("erroAcordeInvalido").style.display = "flex";
     }
 }
 
@@ -303,7 +303,7 @@ function abrirPopup() {
     document.getElementById("instrucoes").classList.remove("popupFechar")
     document.getElementById("instrucoes").classList.add("popup")
 
-    document.getElementById("instrucoes").style.display="flex";
+    document.getElementById("instrucoes").style.display = "flex";
 }
 function fechar(id) {
 
@@ -318,5 +318,3 @@ function fechar(id) {
 
 
 }
-
-
