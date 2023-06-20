@@ -27,38 +27,37 @@ body,html{
     margin-top: 6vh;
     text-align: center;
     color: #D16E26;
-    font-size:3.5em;
+    font-size:3.5rem;
     font-weight: lighter;
     font-family: 'Pompiere', cursive;
 }
 
 /* Imagem da nota musical */
 .imagemH1{
-    
     filter: invert();
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 7vh;
     transform: rotate(-25deg);
 }
 
 .imagemH1Dois{
     filter: invert();
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 7vh;
     transform: scaleX(-1) rotate(-25deg);
 }
 
 #inputs{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 100px;
+    margin-top: 15vh;
 }
 
 /* Quadrado dos inputs de Nota */
 .inputNotas{
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
+    width: 3.7vw;
+    height: 7.7vh;
+    border-radius: 1rem;
     border: 2px solid #D16E26;
     color: white;
     background-color: rgba(255, 255, 255, 0.04);
@@ -67,9 +66,9 @@ body,html{
 
 /* Quadrado menor do input de Nota */
 .inputNotasMenores{
-    height: 35px;
-    width: 35px;
-    border-radius: 8px;
+    height: 5.6vh;
+    width: 2.8vw;
+    border-radius: 0.7rem;
     background-color: rgba(255, 255, 255, 0.04);
 }
 
@@ -80,22 +79,22 @@ body,html{
 #setas{
     display: flex;
     align-items: center;
-    font-size: 50px;
+    font-size: 3rem;
     color: white;
 }
 
 .conjuntoInputAcorde{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.2rem;
 }
 
 .inputAcorde{
     display: flex;
     align-items: center;
-    width: 185px;
-    height: 50px;
-    border-radius: 15px;
+    width: 14vw;
+    height: 7.7vh;
+    border-radius: 1em;
     border: 2px solid #D16E26;
     color: white;
     background-color: rgba(255, 255, 255, 0.04);
@@ -104,7 +103,7 @@ body,html{
 
 /* input Acorde menor */
 .inputAcordeModificado{
-    width: 80px;
+    width: 7vw;
 }
 
 select{
@@ -114,19 +113,19 @@ select{
 .divEnviar{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 15vh;
     
 }
 
 .botaoEnviar{
-    width:200px;
-    padding: 20px;
-    border-radius: 50px;
+    width:18vw;
+    padding: 3vh;
+    border-radius: 10rem;
     border: 2px solid #D16E26;
     cursor: pointer;
     font-family: 'Pompiere', cursive;
     color: #fff;
-    font-size: 30px;
+    font-size: 1.8rem;
     background-color: rgba(255, 255, 255, 0.04);
 
 }
@@ -139,11 +138,11 @@ select{
 
 /* Teclado */
 #fundoTeclado{
-    padding: 0 50px;
+    padding: 0 4vw;
     list-style: none;
-    width: 1000px;
-    height: 380px;
-    margin-top:120px;
+    width: 65.8vw;
+    height: 60vh;
+    margin-top:18vh;
     display: flex;
     align-items: center;
     border: 2px solid #D16E26 ;
@@ -151,11 +150,11 @@ select{
 }
 
 .nota{
-    width: 150px;
-    height: 300px;
+    width: 9.8vw;
+    height: 43vh;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #2F2929;
-    border-radius: 8px;
+    border-radius: 0.7rem;
     margin-left: 1px;
 }
 
@@ -164,12 +163,12 @@ option{
 }
 
 .sustenido{
-    width: 70px;
-    height: 180px;
+    width: 4.65vw;
+    height: 25.5vh;
     background-color: #2F2929;
-    border-radius: 0 0 8px 8px;
-    margin: 0 -18px 0 -20px;
-    margin-bottom: 122px;
+    border-radius: 0 0 0.6rem 0.6rem;
+    margin: 0 -1.25vw 0 -1.25vw;
+    margin-bottom:17.5vh;
     z-index: 1;
 }
 
@@ -193,7 +192,7 @@ option{
     width: 50vw;
     height: 90vh;
     display: block;
-    border-radius: 15px;
+    border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.658);
     color:white;
     animation: animacaoPopup 0.3s ease-in-out;
@@ -204,7 +203,7 @@ option{
     background-color: rgb(58, 51, 46);
     height: 90vh;
     width: 50vw;
-    border-radius: 15px;
+    border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.658);
     color:white;
     animation: animacaoPopupSair 0.3s ease-in-out;
@@ -212,8 +211,8 @@ option{
 }
 
 .erros{
-    height: 45vh;
-    width: 45vw;
+    height: 40vh;
+    width: 50vw;
     display: none;
     align-items: center;
     justify-content: center;
@@ -226,7 +225,22 @@ option{
 
 #instrucoes{
     display: none;
+    overflow-y: scroll;
+    padding:2vh;
 }
+
+#instrucoes::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  #instrucoes::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+  }
+   
+  #instrucoes::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50vw;
+  }
 
 
 @keyframes animacaoPopup {
@@ -254,8 +268,8 @@ option{
     background-color: rgba(0,0,0,0);
     border:0;
     color:white;
-    right: 10px;
-    top:10px;
+    right: 0.8vw;
+    top:2vh;
     font-size: large;
 }
 
@@ -266,7 +280,7 @@ option{
     text-align: justify;
     font-family: cursive;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -278,7 +292,7 @@ span{
 /* Rodapé */
 .rodape{
     width: 100%;
-    height: 30vh;
+    height: 42vh;
     margin-top: 40vh;
     background-color: #44362D;
     color: white;
@@ -287,7 +301,7 @@ span{
 .created{
     position: absolute;
     width: 100%;
-    height: 10vh;
+    height: 20vh;
     margin-top: 18.3vh;
     display: flex;
     flex-direction: column;
@@ -300,7 +314,7 @@ span{
 .createdBy{
     margin-top: 2vh;
     margin-bottom: 1.5vh;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-family: monospace;
     color: white;
 }
@@ -322,7 +336,7 @@ span{
 .divLogo{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 3vh;
     position: absolute;
     height: 27.5vh;
     width: 100%;
