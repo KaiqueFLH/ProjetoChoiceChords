@@ -28,7 +28,7 @@ function buscar() {
         if (acorde.value != "0") {
             defineNota();
         }
-        else if ( acorde.value == "0") {
+        else if (acorde.value == "0") {
             document.getElementById("blur").style.display = "flex";
             document.getElementById("erroAcordeVazio").classList.remove("popupFechar")
             document.getElementById("erroAcordeVazio").classList.add("popup")
@@ -248,10 +248,13 @@ function mudarTeclado() {
     let indiceTerca = defineIndiceTerca();
 
     for (let tecla of document.getElementById("fundoTeclado").children) {
-        if (tecla.id == JSON.parse(nota1.value) + JSON.parse(modificadorNota1.value) ||
+        let nota1Value = JSON.parse(nota1.value)
+        let modif1Value = JSON.parse(modificadorNota1.value)
+        if (tecla.id == nota1Value + modif1Value ||
             tecla.id == indiceSegunda ||
             tecla.id == indiceTerca) {
             tecla.style.backgroundColor = "#D16E26"
+            new Audio("./notas/"+JSON.stringify(nota1Value+modif1Value)+".mp3").play()
         }
         else if (tecla.classList.contains("nota")) {
             tecla.style.backgroundColor = "rgba(255, 255, 255, 0.7)"
@@ -314,6 +317,4 @@ function fechar(id) {
         document.getElementById("blur").style.display = "none";
         document.getElementById(id).style.display = "none";
     }, "250");
-
-
 }
