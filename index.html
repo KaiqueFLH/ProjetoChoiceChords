@@ -33,7 +33,7 @@
         apenas do primeiro bloco de seleção da nota um-->
     <div id="inputs">
         <label name="nota1">
-            <select class="inputNotas" onchange="procuraNota()" id="nota1">
+            <select class="inputNotas" onclick="procuraNota()" id="nota1">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Re</option>
@@ -44,13 +44,13 @@
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota um-->
-            <select class="inputNotas inputNotasMenores" onchange="procuraNota()" id="modificadorNota1">
+            <select class="inputNotas inputNotasMenores" onclick="procuraNota()" id="modificadorNota1">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota dois-->
-            <select class="inputNotas" onchange="procuraNota()" onchange="procuraNota()" name="" id="nota2">
+            <select class="inputNotas" onclick="procuraNota()" onclick="procuraNota()" name="" id="nota2">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Re</option>
@@ -61,13 +61,13 @@
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota dois-->
-            <select class="inputNotas inputNotasMenores" onchange="procuraNota()" id="modificadorNota2">
+            <select class="inputNotas inputNotasMenores" onclick="procuraNota()" id="modificadorNota2">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota três-->
-            <select class="inputNotas" onchange="procuraNota()" name="" id="nota3">
+            <select class="inputNotas" onclick="procuraNota()" name="" id="nota3">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Re</option>
@@ -78,7 +78,7 @@
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota três-->
-            <select class="inputNotas inputNotasMenores" onchange="procuraNota()" id="modificadorNota3">
+            <select class="inputNotas inputNotasMenores" onclick="procuraNota()" id="modificadorNota3">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
@@ -91,7 +91,7 @@
 
         <!--Lista de acordes, junto de seus respectivos valores-->
         <label class="conjuntoInputAcorde">
-            <select class="inputAcorde" onchange="procuraAcorde()" name="" id="acorde">
+            <select class="inputAcorde" onclick="procuraAcorde()" name="" id="acorde">
                 <option value="0"></option>
                 <option value="1">C</option>
                 <option value="2">D</option>
@@ -102,7 +102,7 @@
                 <option value="6.5">B</option>
             </select>
             <!--Modificador de acorde-->
-            <select class="inputAcorde inputAcordeModificado" onchange="procuraAcorde()" id="modificadorAcorde">
+            <select class="inputAcorde inputAcordeModificado" onclick="procuraAcorde()" id="modificadorAcorde">
                 <option value="0"></option>
                 <option value="#">#</option>
                 <option value="m">m</option>

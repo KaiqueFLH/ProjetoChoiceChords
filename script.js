@@ -28,8 +28,7 @@ function buscar() {
         if (acorde.value != "0") {
             defineNota();
         }
-        else if (modificadorAcorde.value == "0" &&
-            acorde.value == "0") {
+        else if ( acorde.value == "0") {
             document.getElementById("blur").style.display = "flex";
             document.getElementById("erroAcordeVazio").classList.remove("popupFechar")
             document.getElementById("erroAcordeVazio").classList.add("popup")
