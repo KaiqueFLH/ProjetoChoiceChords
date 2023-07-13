@@ -15,7 +15,7 @@
         <!--Adiciona um ícone ao canto da tela onde dará informações de sobre o site e como utlizar o website -->
         <div class="hamburguerList">
             <!--Abre o popup onde mostrará as informações sobre o site e de como utiliza-lo-->
-            <h1 style="cursor: pointer;" onclick="abrirPopup()">?</h1>
+            <h1 style="cursor: pointer;" onclick="abrirPopup()" title="Help">?</h1>
         </div>
     </div>
 </header>
@@ -33,52 +33,55 @@
         apenas do primeiro bloco de seleção da nota um-->
     <div id="inputs">
         <label name="nota1">
-            <select class="inputNotas" onclick="procuraNota()" id="nota1">
+            <select title="Nota" class="inputNotas" onclick="procuraNota()" id="nota1">
                 <option value="0"></option>
                 <option value="1">Dó</option>
-                <option value="2">Re</option>
+                <option value="2">Ré</option>
                 <option value="3">Mi</option>
-                <option value="3.5">Fa</option>
+                <option value="3.5">Fá</option>
                 <option value="4.5">Sol</option>
-                <option value="5.5">La</option>
+                <option value="5.5">Lá</option>
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota um-->
-            <select class="inputNotas inputNotasMenores" onclick="procuraNota()" id="modificadorNota1">
+            <select title="Modificador de Nota" class="inputNotas inputNotasMenores" onclick="procuraNota()"
+                id="modificadorNota1">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota dois-->
-            <select class="inputNotas" onclick="procuraNota()" onclick="procuraNota()" name="" id="nota2">
+            <select title="Nota" class="inputNotas" onclick="procuraNota()" onclick="procuraNota()" name="" id="nota2">
                 <option value="0"></option>
                 <option value="1">Dó</option>
-                <option value="2">Re</option>
+                <option value="2">Ré</option>
                 <option value="3">Mi</option>
-                <option value="3.5">Fa</option>
+                <option value="3.5">Fá</option>
                 <option value="4.5">Sol</option>
-                <option value="5.5">La</option>
+                <option value="5.5">Lá</option>
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota dois-->
-            <select class="inputNotas inputNotasMenores" onclick="procuraNota()" id="modificadorNota2">
+            <select title="Modificador de Nota" class="inputNotas inputNotasMenores" onclick="procuraNota()"
+                id="modificadorNota2">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota três-->
-            <select class="inputNotas" onclick="procuraNota()" name="" id="nota3">
+            <select title="Nota" class="inputNotas" onclick="procuraNota()" name="" id="nota3">
                 <option value="0"></option>
                 <option value="1">Dó</option>
-                <option value="2">Re</option>
+                <option value="2">Ré</option>
                 <option value="3">Mi</option>
-                <option value="3.5">Fa</option>
+                <option value="3.5">Fá</option>
                 <option value="4.5">Sol</option>
-                <option value="5.5">La</option>
+                <option value="5.5">Lá</option>
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota três-->
-            <select class="inputNotas inputNotasMenores" onclick="procuraNota()" id="modificadorNota3">
+            <select title="Modificador de Nota" class="inputNotas inputNotasMenores" onclick="procuraNota()"
+                id="modificadorNota3">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
@@ -90,7 +93,7 @@
         </div>
 
         <!--Lista de acordes, junto de seus respectivos valores-->
-        <label class="conjuntoInputAcorde">
+        <label title="Acorde" class="conjuntoInputAcorde">
             <select class="inputAcorde" onclick="procuraAcorde()" id="acorde">
                 <option value="0"></option>
                 <option value="1">C</option>
@@ -102,7 +105,8 @@
                 <option value="6.5">B</option>
             </select>
             <!--Modificador de acorde-->
-            <select class="inputAcorde inputAcordeModificado" onclick="procuraAcorde()" id="modificadorAcorde">
+            <select title="Modificador de Acorde" class="inputAcorde inputAcordeModificado" onclick="procuraAcorde()"
+                id="modificadorAcorde">
                 <option value="0"></option>
                 <option value="#">#</option>
                 <option value="m">m</option>
@@ -121,26 +125,26 @@
     <!--Lista para representar o piano atráves de CSS-->
     <div class="centralizaTeclado">
         <ul id="fundoTeclado">
-            <li id="1" class="nota"></li>
+            <li id="1" class="nota">Dó</li>
             <li id="1.5" class="sustenido"></li>
-            <li id="2" class="nota"></li>
+            <li id="2" class="nota">Ré</li>
             <li id="2.5" class="sustenido"></li>
-            <li id="3" class="nota"></li>
-            <li id="3.5" class="nota"></li>
+            <li id="3" class="nota">Mi</li>
+            <li id="3.5" class="nota">Fá</li>
             <li id="4" class="sustenido"></li>
-            <li id="4.5" class="nota"></li>
+            <li id="4.5" class="nota">Sol</li>
             <li id="5" class="sustenido"></li>
-            <li id="5.5" class="nota"></li>
+            <li id="5.5" class="nota">Lá</li>
             <li id="6" class="sustenido"></li>
-            <li id="6.5" class="nota"></li>
-            <li id="7" class="nota"></li>
+            <li id="6.5" class="nota">Si</li>
+            <li id="7" class="nota">Dó</li>
             <li id="7.5" class="sustenido"></li>
-            <li id="8" class="nota"></li>
+            <li id="8" class="nota">Ré</li>
             <li id="8.5" class="sustenido"></li>
-            <li id="9" class="nota"></li>
-            <li id="9.5" class="nota"></li>
+            <li id="9" class="nota">Mi</li>
+            <li id="9.5" class="nota">Fá</li>
             <li id="10" class="sustenido"></li>
-            <li id="10.5" class="nota"></li>
+            <li id="10.5" class="nota">Sol</li>
         </ul>
     </div>
 
@@ -192,7 +196,7 @@
                 menores,
                 sustenidos e
                 sustenidos menores.
-                <br>⠀⠀⠀⠀<br>⠀⠀⠀⠀
+                <br><br>
             </p>
         </div>
 
@@ -226,7 +230,7 @@
     <footer>
         <div class="rodape">
             <div class="divLogo">
-                <img class="logo" src="./imagens/MusicTales.PNG">
+                <img class="logo" src="./imagens/MusicTales.png">
             </div>
             <div class="musicTales">
 
