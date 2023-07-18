@@ -70,8 +70,8 @@ function buscar() {
     }
 }
 
-// Através das notas definidas procura o acorde que se encaixa
-function procuraAcorde() {
+// Define que estamos procurando uma nota atraves do acorde
+function procuraPorAcorde() {
     this.procura = "Acorde";
     if (acorde.value == "3" || acorde.value == "6.5") {
         modificadorAcorde.children[1].disabled = true;
@@ -85,8 +85,8 @@ function procuraAcorde() {
     }
 }
 
-// Através do acorde definido procura as notas que se encaixam 
- async function procuraNota() {
+// Define que estamos procurando um acorde atraves das notas
+ async function procuraPorNota() {
     this.procura = "Nota";
     if (nota1.value == "3" || nota1.value == "6.5") {
         modificadorNota1.children[1].disabled = true;
@@ -119,7 +119,7 @@ function procuraAcorde() {
 }
 
 //Toca a nota e já define ela como laranja no teclado
- function definirNota(event) {
+ function notaSendoSelecionada(event) {
     let input = event.target.id;
     let nota, modificador;
 
@@ -137,7 +137,7 @@ function procuraAcorde() {
         modificador = JSON.parse(modificadorNota3.value);
     }
 
-    procuraNota();
+    procuraPorNota();
 
     let teclado = document.getElementById("fundoTeclado").children;
     let nota1Value = JSON.parse(nota1.value) + JSON.parse(modificadorNota1.value);
@@ -161,33 +161,29 @@ function procuraAcorde() {
 }
 
 // Define o acorde a partir das notas
-function defineAcorde() {
+async function defineAcorde() {
     let teste1 = testePrimeira(nota1, nota2, nota3, modificadorNota1, modificadorNota2, modificadorNota3);
     let teste2 = testePrimeira(nota2, nota1, nota3, modificadorNota2, modificadorNota1, modificadorNota3);
     let teste3 = testePrimeira(nota3, nota2, nota1, modificadorNota3, modificadorNota2, modificadorNota1);
     if (teste1 != "") {
-        acorde.value = JSON.parse(nota1.value);
+        acorde.value = await JSON.parse(nota1.value);
         modificadorAcorde.value = teste1;
-        mudarTeclado();
-
+        mudarTeclado(nota1, modificadorNota1);
     }
     else if (teste2 != "") {
-        acorde.value = JSON.parse(nota2.value);
+        acorde.value = await JSON.parse(nota2.value);
         modificadorAcorde.value = teste2;
-        mudarTeclado();
-
+        mudarTeclado(nota2, modificadorNota2);
     }
     else if (teste3 != "") {
-        acorde.value = JSON.parse(nota3.value);
+        acorde.value = await JSON.parse(nota3.value);
         modificadorAcorde.value = teste3;
-        mudarTeclado();
+        mudarTeclado(nota3, modificadorNota3);
     }
     else {
-        let erro = document.createElement("p");
         document.getElementById("blur").style.display = "flex";
         document.getElementById("erroAcordeInvalido").classList.remove("popupFechar")
         document.getElementById("erroAcordeInvalido").classList.add("popup")
-
         document.getElementById("erroAcordeInvalido").style.display = "flex";
     }
 }
@@ -195,8 +191,8 @@ function defineAcorde() {
 // Define as notas apartir do acorde
 function defineNota() {
     nota1.value = acorde.value;
-    let indiceSegunda = defineIndiceSegunda();
-    let indiceTerca = defineIndiceTerca();
+    let indiceSegunda = defineIndiceSegunda(nota1);
+    let indiceTerca = defineIndiceTerca(nota1);
 
     if (modificadorAcorde.value == "#") {
         modificadorNota1.value = 0.5;
@@ -238,7 +234,7 @@ function defineNota() {
             modificadorNota3.value = "0.5"
         }
     }
-    mudarTeclado();
+    mudarTeclado(nota1, modificadorNota1);
 }
 
 // testa se a nota é a primeira do acorde
@@ -287,18 +283,20 @@ function testePrimeira(notaA, notaB, notaC, modificadorA, modificadorB, modifica
 }
 
 // Muda a cor do teclado através do acorde definido
-function mudarTeclado() {
-    let indiceSegunda = defineIndiceSegunda();
-    let indiceTerca = defineIndiceTerca();
+async function mudarTeclado(nota, modNota) {
+
+    let indiceSegunda = await defineIndiceSegunda(acorde);
+    let indiceTerca = await defineIndiceTerca(acorde);
 
     for (let tecla of document.getElementById("fundoTeclado").children) {
-        let nota1Value = JSON.parse(nota1.value)
-        let modif1Value = JSON.parse(modificadorNota1.value)
-        if (tecla.id == nota1Value + modif1Value ||
+        let nota1Value = JSON.parse(nota.value) + JSON.parse(modNota.value);
+        console.log(nota1Value)
+        if (tecla.id == nota1Value ||
             tecla.id == indiceSegunda ||
             tecla.id == indiceTerca) {
             tecla.style.backgroundColor = "#D16E26"
-            new Audio("./notas/" + JSON.stringify(nota1Value + modif1Value) + ".mp3").play()
+            let id = tecla.id
+            new Audio("./notas/" + id + ".mp3").play()
         }
         else if (tecla.classList.contains("nota")) {
             tecla.style.backgroundColor = "rgba(255, 255, 255, 0.7)"
@@ -310,34 +308,34 @@ function mudarTeclado() {
 }
 
 // Define a segunda nota do acorde  
-function defineIndiceSegunda() {
+function defineIndiceSegunda(nota) {
     if (modificadorAcorde.value == "#") {
-        return JSON.parse(nota1.value) + 2.5;
+        return JSON.parse(nota.value) + 2.5;
     }
     else if (modificadorAcorde.value == "#m") {
-        return JSON.parse(nota1.value) + 2
+        return JSON.parse(nota.value) + 2;
     }
     else if (modificadorAcorde.value == "m") {
-        return JSON.parse(nota1.value) + 1.5;
+        return JSON.parse(nota.value) + 1.5;
     }
     else {
-        return JSON.parse(nota1.value) + 2;
+        return JSON.parse(nota.value) + 2;
     }
 }
 
 // Define a terceira nota do acorde
-function defineIndiceTerca() {
+function defineIndiceTerca(nota) {
     if (modificadorAcorde.value == "#") {
-        return JSON.parse(nota1.value) + 4;
+        return JSON.parse(nota.value) + 4;
     }
     else if (modificadorAcorde.value == "#m") {
-        return JSON.parse(nota1.value) + 4;
+        return JSON.parse(nota.value) + 4;
     }
     else if (modificadorAcorde.value == "m") {
-        return JSON.parse(nota1.value) + 3.5;
+        return JSON.parse(nota.value) + 3.5;
     }
     else {
-        return JSON.parse(nota1.value) + 3.5;
+        return JSON.parse(nota.value) + 3.5;
     }
 
 }

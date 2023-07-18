@@ -33,7 +33,7 @@
         apenas do primeiro bloco de seleção da nota um-->
     <div id="inputs">
         <label name="nota1">
-            <select title="Nota" class="inputNotas" onchange="definirNota(event)" id="nota1">
+            <select title="Nota" class="inputNotas" onchange="notaSendoSelecionada(event)" id="nota1">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Ré</option>
@@ -45,13 +45,13 @@
             </select>
             <!--Modificador da nota um-->
             <select title="Modificador de Nota" class="inputNotas inputNotasMenores"  
-                id="modificadorNota1" onchange="definirNota(event)">
+                id="modificadorNota1" onchange="notaSendoSelecionada(event)">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota dois-->
-            <select title="Nota" class="inputNotas" onchange="definirNota(event)" id="nota2">
+            <select title="Nota" class="inputNotas" onchange="notaSendoSelecionada(event)" id="nota2">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Ré</option>
@@ -63,13 +63,13 @@
             </select>
             <!--Modificador da nota dois-->
             <select title="Modificador de Nota" class="inputNotas inputNotasMenores"  
-                id="modificadorNota2" onchange="definirNota(event)">
+                id="modificadorNota2" onchange="notaSendoSelecionada(event)">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota três-->
-            <select title="Nota" class="inputNotas" id="nota3" onchange="definirNota(event)">
+            <select title="Nota" class="inputNotas" id="nota3" onchange="notaSendoSelecionada(event)">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Ré</option>
@@ -81,7 +81,7 @@
             </select>
             <!--Modificador da nota três-->
             <select title="Modificador de Nota" class="inputNotas inputNotasMenores"  
-                id="modificadorNota3" onchange="definirNota(event)">
+                id="modificadorNota3" onchange="notaSendoSelecionada(event)">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
@@ -94,7 +94,7 @@
 
         <!--Lista de acordes, junto de seus respectivos valores-->
         <label title="Acorde" class="conjuntoInputAcorde">
-            <select class="inputAcorde" onclick="procuraAcorde()" id="acorde">
+            <select class="inputAcorde" onclick=" procuraPorAcorde()" id="acorde">
                 <option value="0"></option>
                 <option value="1">C</option>
                 <option value="2">D</option>
@@ -105,7 +105,7 @@
                 <option value="6.5">B</option>
             </select>
             <!--Modificador de acorde-->
-            <select title="Modificador de Acorde" class="inputAcorde inputAcordeModificado" onclick="procuraAcorde()"
+            <select title="Modificador de Acorde" class="inputAcorde inputAcordeModificado" onclick=" procuraPorAcorde()"
                 id="modificadorAcorde">
                 <option value="0"></option>
                 <option value="#">#</option>
@@ -183,7 +183,7 @@
                 O site tem uma funcionalidade muito simples de ser entendida. Nos seis campos à direita, você seleciona
                 as
                 notas junto com seus modificadores (sustenido ou não), para que ao selecionar três notas, possamos
-                procurar
+                 procurar
                 qual acorde elas formam. Nos dois campos à esquerda, você seleciona o acorde e o seu modificador
                 (sustenido,
                 menor, sustenido menor ou nenhum). Ao apertar o botão de enviar, os campos do outro lado serão alterados
