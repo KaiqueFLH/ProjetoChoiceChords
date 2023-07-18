@@ -359,10 +359,27 @@ span {
     background-color: #44362D;
 }
 
-@media only screen and (max-width: 600px)  {
+@media only screen and (max-width: 600px) {
 
-    #ajuda{
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 50vh;
+        background-color: #2F2929;
+    }
+
+    .cabecalho {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 5vh;
+        background-color: #44362D;
+    }
+
+    #ajuda {
         margin-left: 10px;
+        font-size: 18px;
     }
 
     .divTitulo {
@@ -370,10 +387,10 @@ span {
         justify-content: center;
         align-items: baseline;
     }
-    
-    .h1Nome{
+
+    .h1Nome {
         font-size: 3rem;
-        
+
     }
 
     .imagemH1 {
@@ -382,7 +399,7 @@ span {
         height: 40px;
         transform: rotate(-25deg);
     }
-    
+
     .imagemH1Dois {
         filter: invert();
         width: 30px;
@@ -420,11 +437,12 @@ span {
 
     .inputNotas {
         width: 15.7vw;
-        
+
     }
+
     .inputNotasMenores {
-        
-        width:10.8vw;
+
+        width: 10.8vw;
     }
 
     #setas {
@@ -432,13 +450,49 @@ span {
         rotate: 90deg;
     }
 
-    .inputAcorde {  
+    .inputAcorde {
         width: 27vw;
-        
+
     }
 
     .botaoEnviar {
-        width: 30vw; 
+        width: 30vw;
     }
-}   
 
+    .logo {
+        width: 200px;
+        height: 60px;
+    }
+
+    .popup {
+        margin-top: 30px;
+        width: 80vw;
+        height: 90vh;
+
+    }
+
+    .pre {
+        margin: 6vw 2.5vw;
+        height: 50vh;
+        width: 72vw;
+        padding: 10px;
+    }
+
+    .popupFechar {
+        margin-top: 30px;
+        width: 80vw;
+        height: 90vh;
+    }
+
+    .rodape {
+        margin-top: 20vh;
+        font-size: 13px;
+    }
+
+    .erros {
+        height: 50vh;
+        width: 60vw;
+        font-size: x-large;
+        
+    }
+}
