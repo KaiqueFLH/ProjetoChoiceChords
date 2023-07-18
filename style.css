@@ -34,15 +34,15 @@ html {
 /* Imagem da nota musical */
 .imagemH1 {
     filter: invert();
-    width: 3vw;
-    height: 7vh;
+    width: 30px;
+    height: 40px;
     transform: rotate(-25deg);
 }
 
 .imagemH1Dois {
     filter: invert();
-    width: 3vw;
-    height: 7vh;
+    width: 30px;
+    height: 40px;
     transform: scaleX(-1) rotate(-25deg);
 }
 
@@ -361,22 +361,53 @@ span {
 
 @media only screen and (max-width: 600px)  {
 
+    #ajuda{
+        margin-left: 10px;
+    }
+
+    .divTitulo {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .h1Nome{
+        font-size: 3rem;
+        
+    }
+
+    .imagemH1 {
+        filter: invert();
+        width: 30px;
+        height: 40px;
+        transform: rotate(-25deg);
+    }
+    
+    .imagemH1Dois {
+        filter: invert();
+        width: 30px;
+        height: 40px;
+        transform: scaleX(-1) rotate(-25deg);
+    }
+
     /* Teclado */
     #fundoTeclado {
         width: 72.8vw;
-        height: 32vh;
+        height: 27vh;
         font-size: 0.8rem;
     }
 
     .nota {
-        width: 10.8vw;
-        height: 12vh;
+        width: 15.8vw;
+        height: 11vh;
+        border-radius: 10px;
     }
 
     .sustenido {
         width: 4.65vw;
-        height: 8.4vh;
-        margin-bottom: 7.5vh;
+        height: 9.4vh;
+        border-radius: 10px;
+        margin-bottom: 5.9vh;
     }
 
     #inputs {
