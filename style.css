@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 
-@media screen {
-    
-}
 
-body,html{
+
+body,
+html {
     margin: 0;
     padding: 0;
     height: 170vh;
@@ -12,49 +11,49 @@ body,html{
 }
 
 /* ícone de menu */
-.hamburguerList{
+.hamburguerList {
     margin-left: 2vw;
     color: #fff;
 }
 
-.divTitulo{
+.divTitulo {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
-.h1Nome{
+.h1Nome {
     margin-top: 6vh;
     text-align: center;
     color: #D16E26;
-    font-size:3.5rem;
+    font-size: 3.5rem;
     font-weight: lighter;
     font-family: 'Pompiere', cursive;
 }
 
 /* Imagem da nota musical */
-.imagemH1{
+.imagemH1 {
     filter: invert();
-    width: 3vw;
-    height: 7vh;
+    width: 30px;
+    height: 40px;
     transform: rotate(-25deg);
 }
 
-.imagemH1Dois{
+.imagemH1Dois {
     filter: invert();
-    width: 3vw;
-    height: 7vh;
+    width: 30px;
+    height: 40px;
     transform: scaleX(-1) rotate(-25deg);
 }
 
-#inputs{
+#inputs {
     display: flex;
     justify-content: space-evenly;
     margin-top: 15vh;
 }
 
 /* Quadrado dos inputs de Nota */
-.inputNotas{
+.inputNotas {
     width: 3.7vw;
     height: 7.7vh;
     border-radius: 1rem;
@@ -65,31 +64,31 @@ body,html{
 
 
 /* Quadrado menor do input de Nota */
-.inputNotasMenores{
+.inputNotasMenores {
     height: 5.6vh;
     width: 2.8vw;
     border-radius: 0.7rem;
     background-color: rgba(255, 255, 255, 0.04);
 }
 
-.comparacao{
+.comparacao {
     display: flex;
 }
 
-#setas{
+#setas {
     display: flex;
     align-items: center;
     font-size: 3rem;
     color: white;
 }
 
-.conjuntoInputAcorde{
+.conjuntoInputAcorde {
     display: flex;
     align-items: center;
     gap: 0.2rem;
 }
 
-.inputAcorde{
+.inputAcorde {
     display: flex;
     align-items: center;
     width: 14vw;
@@ -102,23 +101,23 @@ body,html{
 }
 
 /* input Acorde menor */
-.inputAcordeModificado{
+.inputAcordeModificado {
     width: 7vw;
 }
 
-select{
+select {
     text-align: center;
 }
 
-.divEnviar{
+.divEnviar {
     display: flex;
     justify-content: center;
     margin-top: 15vh;
-    
+
 }
 
-.botaoEnviar{
-    width:18vw;
+.botaoEnviar {
+    width: 18vw;
     padding: 3vh;
     border-radius: 10rem;
     border: 2px solid #D16E26;
@@ -130,26 +129,28 @@ select{
 
 }
 
-.centralizaTeclado{
+
+
+.centralizaTeclado {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 /* Teclado */
-#fundoTeclado{
+#fundoTeclado {
     padding: 0 4vw;
     list-style: none;
     width: 65.8vw;
     height: 60vh;
-    margin-top:18vh;
+    margin-top: 18vh;
     display: flex;
     align-items: center;
-    border: 2px solid #D16E26 ;
-    background-color: rgba(255,255,255,0.04);
+    border: 2px solid #D16E26;
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
-.nota{
+.nota {
     width: 9.8vw;
     height: 43vh;
     background-color: rgba(255, 255, 255, 0.7);
@@ -162,23 +163,23 @@ select{
     padding: 2vh 0;
 }
 
-option{
+option {
     background-color: #2F2929;
 }
 
-.sustenido{
+.sustenido {
     width: 4.65vw;
     height: 29.4vh;
     background-color: #2F2929;
     border-radius: 0 0 0.6rem 0.6rem;
     margin: 0 -1.25vw 0 -1.25vw;
-    margin-bottom:17.5vh;
+    margin-bottom: 17.5vh;
     z-index: 1;
 }
 
 /* Teclado */
 /* Conjunto do Popup */
-.defoco{
+.defoco {
     right: 0;
     left: 0;
     top: 0;
@@ -188,33 +189,34 @@ option{
     align-items: center;
     backdrop-filter: blur(3px);
     z-index: 2;
-    position:fixed;
+    position: fixed;
 
 }
-.popup{
+
+.popup {
     background-color: rgb(58, 51, 46);
     width: 50vw;
     height: 90vh;
     display: block;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.658);
-    color:white;
+    color: white;
     animation: animacaoPopup 0.3s ease-in-out;
-    position:fixed;
+    position: fixed;
 }
 
-.popupFechar{
+.popupFechar {
     background-color: rgb(58, 51, 46);
     height: 90vh;
     width: 50vw;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.658);
-    color:white;
+    color: white;
     animation: animacaoPopupSair 0.3s ease-in-out;
-    position:fixed;
+    position: fixed;
 }
 
-.erros{
+.erros {
     height: 40vh;
     width: 50vw;
     display: none;
@@ -227,24 +229,24 @@ option{
     text-align: center;
 }
 
-#instrucoes{
+#instrucoes {
     display: none;
     overflow-y: scroll;
-    padding:2vh;
+    padding: 2vh;
 }
 
 #instrucoes::-webkit-scrollbar {
     width: 1em;
-  }
-   
-  #instrucoes::-webkit-scrollbar-track {
-    background-color: rgba(0,0,0,0);
-  }
-   
-  #instrucoes::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.2);
+}
+
+#instrucoes::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#instrucoes::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50vw;
-  }
+}
 
 
 @keyframes animacaoPopup {
@@ -267,18 +269,18 @@ option{
     }
 }
 
-.sair{
-    position:absolute;
-    background-color: rgba(0,0,0,0);
-    border:0;
-    color:white;
+.sair {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    color: white;
     right: 0.8vw;
-    top:2vh;
+    top: 2vh;
     font-size: large;
 }
 
-.pre{
-    margin:3vw 2.5vw;
+.pre {
+    margin: 3vw 2.5vw;
     height: 50vh;
     width: 45vw;
     text-align: justify;
@@ -288,13 +290,13 @@ option{
     color: rgba(255, 255, 255, 0.7);
 }
 
-span{
+span {
     color: #D16E26;
 }
 
 /* Conjunto do Popup */
 /* Rodapé */
-.rodape{
+.rodape {
     width: 100%;
     height: 42vh;
     margin-top: 40vh;
@@ -302,7 +304,8 @@ span{
     color: white;
 
 }
-.created{
+
+.created {
     position: absolute;
     width: 100%;
     height: 20vh;
@@ -312,10 +315,10 @@ span{
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+
 }
 
-.createdBy{
+.createdBy {
     margin-top: 2vh;
     margin-bottom: 1.5vh;
     font-size: 0.8rem;
@@ -323,7 +326,7 @@ span{
     color: white;
 }
 
-.musicTales{
+.musicTales {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -332,12 +335,14 @@ span{
     width: 100%;
     margin-top: 20px;
 }
-.logo{
+
+.logo {
     position: absolute;
     width: 30vh;
     height: 10vh;
 }
-.divLogo{
+
+.divLogo {
     display: flex;
     justify-content: center;
     margin-top: 3vh;
@@ -346,10 +351,94 @@ span{
     width: 100%;
 }
 
-.cabecalho{
+.cabecalho {
     display: flex;
     align-items: center;
     width: 100%;
     height: 10vh;
     background-color: #44362D;
 }
+
+@media only screen and (max-width: 600px)  {
+
+    #ajuda{
+        margin-left: 10px;
+    }
+
+    .divTitulo {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .h1Nome{
+        font-size: 3rem;
+        
+    }
+
+    .imagemH1 {
+        filter: invert();
+        width: 30px;
+        height: 40px;
+        transform: rotate(-25deg);
+    }
+    
+    .imagemH1Dois {
+        filter: invert();
+        width: 30px;
+        height: 40px;
+        transform: scaleX(-1) rotate(-25deg);
+    }
+
+    /* Teclado */
+    #fundoTeclado {
+        width: 72.8vw;
+        height: 27vh;
+        font-size: 0.8rem;
+    }
+
+    .nota {
+        width: 15.8vw;
+        height: 11vh;
+        border-radius: 10px;
+    }
+
+    .sustenido {
+        width: 4.65vw;
+        height: 9.4vh;
+        border-radius: 10px;
+        margin-bottom: 5.9vh;
+    }
+
+    #inputs {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 15vh;
+    }
+
+    .inputNotas {
+        width: 15.7vw;
+        
+    }
+    .inputNotasMenores {
+        
+        width:10.8vw;
+    }
+
+    #setas {
+        font-size: 2rem;
+        rotate: 90deg;
+    }
+
+    .inputAcorde {  
+        width: 27vw;
+        
+    }
+
+    .botaoEnviar {
+        width: 30vw; 
+    }
+}   
+
