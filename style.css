@@ -363,17 +363,18 @@ span {
 
     /* Teclado */
     #fundoTeclado {
-        width: 63.8vw;
-        height: 20vh;
+        width: 72.8vw;
+        height: 32vh;
+        font-size: 0.8rem;
     }
 
     .nota {
-        width: 7.8vw;
+        width: 10.8vw;
         height: 12vh;
     }
 
     .sustenido {
-        width: 3.65vw;
+        width: 4.65vw;
         height: 8.4vh;
         margin-bottom: 7.5vh;
     }
