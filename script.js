@@ -86,11 +86,11 @@ function procuraAcorde() {
 }
 
 // Através do acorde definido procura as notas que se encaixam 
-function procuraNota() {
+ async function procuraNota() {
     this.procura = "Nota";
     if (nota1.value == "3" || nota1.value == "6.5") {
         modificadorNota1.children[1].disabled = true;
-        if (modificadorNota1.value == "0.5") {
+        if (modificadorNota1.value != "0") {
             modificadorNota1.value = "0";
         }
     } else {
@@ -98,7 +98,7 @@ function procuraNota() {
     }
     if (nota2.value == "3" || nota2.value == "6.5") {
         modificadorNota2.children[1].disabled = true;
-        if (modificadorNota2.value == "0.5") {
+        if (modificadorNota2.value != "0") {
             modificadorNota2.value = "0";
         }
 
@@ -107,12 +107,56 @@ function procuraNota() {
     }
     if (nota3.value == "3" || nota3.value == "6.5") {
         modificadorNota3.children[1].disabled = true;
-        if (modificadorNota3.value == "0.5") {
+        if (modificadorNota3.value != "0") {
             modificadorNota3.value = "0";
         }
 
     } else {
         modificadorNota3.children[1].disabled = false;
+    }
+
+    return "a"
+}
+
+//Toca a nota e já define ela como laranja no teclado
+ function definirNota(event) {
+    let input = event.target.id;
+    let nota, modificador;
+
+    //define qual nota que está sendo iserida (1, 2, ou 3)
+    if (input == "nota1" || input == "modificadorNota1") {
+        nota = JSON.parse(nota1.value);
+        modificador = JSON.parse(modificadorNota1.value);
+    }
+    else if (input == "nota2" || input == "modificadorNota2") {
+        nota = JSON.parse(nota2.value);
+        modificador = JSON.parse(modificadorNota2.value);
+
+    } else {
+        nota = JSON.parse(nota3.value);
+        modificador = JSON.parse(modificadorNota3.value);
+    }
+
+    procuraNota();
+
+    let teclado = document.getElementById("fundoTeclado").children;
+    let nota1Value = JSON.parse(nota1.value) + JSON.parse(modificadorNota1.value);
+    let nota2Value = JSON.parse(nota2.value) + JSON.parse(modificadorNota2.value);
+    let nota3Value = JSON.parse(nota3.value) + JSON.parse(modificadorNota3.value);
+
+    for (let tecla of teclado) {
+        if (tecla.id == nota + modificador) {
+            new Audio("./notas/" + JSON.stringify(nota + modificador) + ".mp3").play()
+        }
+        if (tecla.id == nota2Value || 
+            tecla.id == nota3Value ||
+            tecla.id == nota1Value) {
+            tecla.style.backgroundColor = "#D16E26";
+        } else if (tecla.classList.contains("nota")) {
+            tecla.style.backgroundColor = "rgba(255, 255, 255, 0.7)"
+        } else if (tecla.classList.contains("sustenido")) {
+            tecla.style.backgroundColor = "#2F2929"
+        }
     }
 }
 
@@ -254,7 +298,7 @@ function mudarTeclado() {
             tecla.id == indiceSegunda ||
             tecla.id == indiceTerca) {
             tecla.style.backgroundColor = "#D16E26"
-            new Audio("./notas/"+JSON.stringify(nota1Value+modif1Value)+".mp3").play()
+            new Audio("./notas/" + JSON.stringify(nota1Value + modif1Value) + ".mp3").play()
         }
         else if (tecla.classList.contains("nota")) {
             tecla.style.backgroundColor = "rgba(255, 255, 255, 0.7)"

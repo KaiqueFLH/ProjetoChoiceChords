@@ -33,7 +33,7 @@
         apenas do primeiro bloco de seleção da nota um-->
     <div id="inputs">
         <label name="nota1">
-            <select title="Nota" class="inputNotas" onclick="procuraNota()" id="nota1">
+            <select title="Nota" class="inputNotas" onchange="definirNota(event)" id="nota1">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Ré</option>
@@ -44,14 +44,14 @@
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota um-->
-            <select title="Modificador de Nota" class="inputNotas inputNotasMenores" onclick="procuraNota()"
-                id="modificadorNota1">
+            <select title="Modificador de Nota" class="inputNotas inputNotasMenores"  
+                id="modificadorNota1" onchange="definirNota(event)">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota dois-->
-            <select title="Nota" class="inputNotas" onclick="procuraNota()" onclick="procuraNota()" name="" id="nota2">
+            <select title="Nota" class="inputNotas" onchange="definirNota(event)" id="nota2">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Ré</option>
@@ -62,14 +62,14 @@
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota dois-->
-            <select title="Modificador de Nota" class="inputNotas inputNotasMenores" onclick="procuraNota()"
-                id="modificadorNota2">
+            <select title="Modificador de Nota" class="inputNotas inputNotasMenores"  
+                id="modificadorNota2" onchange="definirNota(event)">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
 
             <!--Bloco de seleção da nota três-->
-            <select title="Nota" class="inputNotas" onclick="procuraNota()" name="" id="nota3">
+            <select title="Nota" class="inputNotas" id="nota3" onchange="definirNota(event)">
                 <option value="0"></option>
                 <option value="1">Dó</option>
                 <option value="2">Ré</option>
@@ -80,8 +80,8 @@
                 <option value="6.5">Si</option>
             </select>
             <!--Modificador da nota três-->
-            <select title="Modificador de Nota" class="inputNotas inputNotasMenores" onclick="procuraNota()"
-                id="modificadorNota3">
+            <select title="Modificador de Nota" class="inputNotas inputNotasMenores"  
+                id="modificadorNota3" onchange="definirNota(event)">
                 <option value="0"></option>
                 <option value="0.5">#</option>
             </select>
