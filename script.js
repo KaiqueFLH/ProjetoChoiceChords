@@ -360,3 +360,39 @@ function fechar(id) {
         document.getElementById(id).style.display = "none";
     }, "250");
 }
+
+function mudarTema(){
+    // --fonte: #fff;
+    // --fundoGeral:#2F2929;
+    // --fundoCabecalho:#44362D;
+    // --destaque:#D16E26;
+    // --fundoInput:rgba(255, 255, 255, 0.04);
+    // --sustenido:#2F2929;
+
+    let html = document.querySelector("html")
+    let imagem1 = document.getElementsByClassName("imagemH1")
+    let imagem2 = document.getElementsByClassName("imagemH1Dois")
+
+    
+
+    if(getComputedStyle(html).getPropertyValue("--fundoGeral")== "#2F2929"){
+        html.style.setProperty("--fundoGeral","#CEBEA0")
+        html.style.setProperty("--fundoInput","rgba(255,255,255,0.15)")
+        html.style.setProperty("--fundoBotao","#422500")
+        html.style.setProperty("--destaque","#422500")
+        html.style.setProperty("--sustenido","#422500")
+        html.style.setProperty("--fonte","#422500")
+        imagem1[0].setAttribute("src", "./imagens/notaTemaWhite.png")
+        imagem2[0].setAttribute("src", "./imagens/notaTemaWhite.png")
+    }
+    else{
+        html.style.setProperty("--fundoGeral","#2F2929")
+        html.style.setProperty("--fundoInput","rgba(255, 255, 255, 0.04)")
+        html.style.setProperty("--fundoBotao","rgba(255, 255, 255, 0.04)")
+        html.style.setProperty("--destaque","#D16E26")
+        html.style.setProperty("--sustenido","#2F2929")
+        html.style.setProperty("--fonte","#fff")
+        imagem1[0].setAttribute("src", "./imagens/nota-musical.png")
+        imagem2[0].setAttribute("src", "./imagens/nota-musical.png")
+    }
+}
